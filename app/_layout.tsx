@@ -12,12 +12,11 @@ export {
 } from "expo-router";
 
 export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: "(tabs)",
+  // Keep modal as the initial route
+  initialRouteName: "modal",
 };
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
 
 export default memo(function RootLayout() {
   const [loaded, error] = useFonts({
@@ -51,9 +50,9 @@ const theme = vars({
 function RootLayoutNav() {
   return (
     <View style={[theme, StyleSheet.absoluteFill]}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: "modal" }} />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="modal" />
+        <Stack.Screen name="(tabs)" />
       </Stack>
     </View>
   );

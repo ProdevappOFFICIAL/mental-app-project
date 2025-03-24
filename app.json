@@ -25,7 +25,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.prince734.nativewindexporouter"
     },
     "web": {
       "bundler": "metro",
@@ -49,6 +50,9 @@
     "extra": {
       "router": {
         "origin": false
+      },
+      "eas": {
+        "projectId": "a1afd64c-4090-4aed-a7a8-8a4f4df54f99"
       }
     }
   }
